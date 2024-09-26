@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  app:
+    container_name: mail-sender
+    image: ubuntu-apache2-php8.1-sqlite:1.0
+    restart: always
+    ports:
+      - 8085:80
+    volumes:
+      - ./mail_sender:/var/www/html
+      - ./custome.conf:/etc/apache2/sites-available/custome.conf
